@@ -15,10 +15,14 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
       {
         test: require.resolve('./src/index.js'),
         use: 'imports-loader?angular'
-       }
-        ]
-    },
-   plugins: [
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      }
+    ]
+  },
+  plugins: [
      
      new HtmlWebpackPlugin({
         title: 'Custom template',
